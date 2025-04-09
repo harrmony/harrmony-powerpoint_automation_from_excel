@@ -1,5 +1,5 @@
-Attribute VB_Name = "Module5"
-Sub UpdateHDPptFromExcelChartSingleReport()
+Attribute VB_Name = "Creating_PPT_1_Slide_Per_Column"
+Sub UpdatePptFromExcelChartSingleReport()
     ' Define PowerPoint and Excel objects
     Dim ppApp As Object
     Dim ppPres As PowerPoint.Presentation
@@ -26,7 +26,7 @@ Sub UpdateHDPptFromExcelChartSingleReport()
     completedsuccessfully = False
     
     ' Set the path to your PowerPoint template
-    pptFilePath = "G:\Shared drives\Team Drive\2. Projects\5. Underway\MSL - Home Improvement Study\6. Reporting\Automation\THD_State_slide_MASTER_TEMPLATE-Feb25-924.pptx"
+    pptFilePath = "C:\ADD TEMPLATE FILE HERE.pptx"
         
     ' Reference the mapping sheet and TempTable worksheet in your workbook
     Set mappingSheet = ThisWorkbook.Sheets("MappingSheet")
@@ -40,7 +40,7 @@ Sub UpdateHDPptFromExcelChartSingleReport()
     startCol = 9    ' Column I
     endCol = 58     ' Column BF is 58
     
-    ' Loop over each column—each column will be one slide in the final deck
+    ' Loop over each columnâ€”each column will be one slide in the final deck
     For dataCol = startCol To endCol
     
         ' Duplicate the template slide and capture the new slide in a variable
@@ -112,7 +112,7 @@ Sub UpdateHDPptFromExcelChartSingleReport()
     
     ' Define a new filename for the final PowerPoint deck (all slides)
     newFileName = Left(pptFilePath, InStrRev(pptFilePath, "\") - 1) & _
-                  "\Outputs\Home Depot State Slides" & Format(Now, "yyyy-mm-dd hh-mm-ss") & ".pptx"
+                  "\Outputs\OUTPUT NAME Slides" & Format(Now, "yyyy-mm-dd hh-mm-ss") & ".pptx"
     
     ' Save the presentation and set the flag for successful completion
     ppPres.SaveAs newFileName
