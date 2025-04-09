@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module3"
+Attribute VB_Name = "Sorting_table_in_Tables_Sheet"
 Sub OnlySortingTheDataIntoTheBuilderSheet()
     Dim wsSource As Worksheet
     Dim wsBuilder As Worksheet
