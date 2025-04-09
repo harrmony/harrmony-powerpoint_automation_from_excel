@@ -3,7 +3,7 @@ Sub OnlyCopyingTheTableInBuilderSheet()
     Dim ws As Worksheet
     Set ws = ThisWorkbook.Sheets("Builder")
     
-    ' ========== 1. Find the last used row on the sheet ==========
+    ' Find the last used row on the sheet
     Dim lastSheetRow As Long
     lastSheetRow = ws.Cells.Find(What:="*", LookIn:=xlFormulas, _
                     SearchOrder:=xlByRows, SearchDirection:=xlPrevious).Row
@@ -12,7 +12,7 @@ Sub OnlyCopyingTheTableInBuilderSheet()
     Dim pasteRow As Long
     pasteRow = lastSheetRow + 3
     
-    ' ========== 2. Determine the dimensions of the top table starting at B1 ==========
+    'Determine the dimensions of the top table starting at B1
     Dim tableStartRow As Long, tableEndRow As Long, tableRows As Long
     tableStartRow = 1  ' Table starts at row 1, cell B1
     
@@ -46,14 +46,14 @@ Sub OnlyCopyingTheTableInBuilderSheet()
     Dim tableRange As Range
     Set tableRange = ws.Range(ws.Cells(tableStartRow, tableStartCol), ws.Cells(tableEndRow, tableEndCol))
     
-    ' ========== 3. Copy the top table and paste it at the determined location ==========
+    'Copy the top table and paste it at the determined location
     tableRange.Copy Destination:=ws.Cells(pasteRow, "B")
     
     ' Determine the last row of the pasted table.
     Dim pastedTableLastRow As Long
     pastedTableLastRow = pasteRow + tableRows - 1
     
-    ' ========== 4. Extend formulas in columns CZ to GY ==========
+    'Extend formulas in columns CZ to GY
     ' Define formula columns.
     Dim formulaStartCol As Long, formulaEndCol As Long
     formulaStartCol = ws.Range("CZ1").Column
