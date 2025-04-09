@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module2"
+Attribute VB_Name = "Run Entire Script"
 Sub FULLPROCESSooooMakeSureTheCellInCoulmnCThatContainsTheWordOrderIsSelected()
     ' Call the first procedure
     OnlySortingTheDataIntoTheBuilderSheet
