@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "Copying_into_Builder_Sheet"
 Sub OnlyCopyingTheTableInBuilderSheet()
     Dim ws As Worksheet
     Set ws = ThisWorkbook.Sheets("Builder")
