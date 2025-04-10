@@ -53,7 +53,7 @@ Sub OnlyCopyingTheTableInBuilderSheet()
     Dim pastedTableLastRow As Long
     pastedTableLastRow = pasteRow + tableRows - 1
     
-    'Extend formulas in columns CZ to GY
+    'Extend formulas in columns CZ to GY - these columns should be updated to depending on the input data
     ' Define formula columns.
     Dim formulaStartCol As Long, formulaEndCol As Long
     formulaStartCol = ws.Range("CZ1").Column
